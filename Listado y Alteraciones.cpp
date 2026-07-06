@@ -1,17 +1,20 @@
 #include <iostream>
 #include <string>
+#include <algorithm>
 using namespace std;
 
-void Ord_Alf(string Nom[5]){
-    for (int i=0; i<5; i++){
-        for (int j=i+1; j<5; j++){
-            if (Nom[i]>Nom[j]){
-                string Aux = Nom[i];
-                Nom[i] = Nom[j];
-                Nom[j] = Aux;
+void Ord_Largo(string Nom[5]){
+    for(int i=0; i<4; i++){
+        for(int j=i+1; j<5; j++){
+            if(Nom[i].length()<Nom[j].length()){
+                swap(Nom[i], Nom[j]);
             }
         }
     }
+}
+
+void Ord_Alf(string Nom[5]){
+    sort(Nom, Nom+4);
 }
 
 int main(){
@@ -35,7 +38,7 @@ int main(){
 
     cout<<endl<<"¿Qué se va a hacer?"<<endl
     <<"1.Ordenar Alfabeticamente"<<endl
-    <<"2.No option yet"<<endl
+    <<"2.Ordenar por Largo"<<endl
     <<"Seleccionar: ";
     cin>>opp;
 
@@ -43,7 +46,9 @@ int main(){
         case 1: Ord_Alf(Nom);
         cout<<endl<<"Lista en orden alfabético"<<endl;
          break;
-        case 2: cout<<"Not yet"; break;
+        case 2: Ord_Largo(Nom);
+        cout<<endl<<"Listado de largo a corto"<<endl; 
+        break;
         default: cout<<"Opción no valida";
     }
 
