@@ -2,34 +2,36 @@
 #include <string>
 using namespace std;
 
+//en este caso, funciona como struct
 class Cat{
     public:
     string color;
     string nom;
     int edad;
-
-    Cat(){
-        color="unknown";
-        nom="unknown";
-        edad=0;
-    }
-    
-    Cat(string x, string y, int z){
-        color=x;
-        nom=y;
-        edad=z;
-    }
 };
 
 int main(){
-    Cat cat1 ("Naranja", "Nachito", 4);
-    Cat cat2 ("Gris", "Mauricio", 5);
-    Cat cat3;
-    cout<<"Listado de Kittens"<<endl;
-    cout<<"Gato 1\nNombre:"<< cat1.nom << "\nColor: "<< cat1.color << "\nEdad:" << cat1.edad << endl << endl;
-    cout<<"Gato 2\nNombre:"<< cat2.nom << "\nColor: "<< cat2.color << "\nEdad:" << cat2.edad << endl << endl;
-    cout<<"Gato 3\nNombre:"<< cat3.nom << "\nColor: "<< cat3.color << "\nEdad:" << cat3.edad << endl << endl;
+    Cat kittens[5];
+    
+    cout<<"Introduce a tus gati-hijos"<<endl;
+    for (int i=0; i<5; i++){
+        cout<<"Gato "<<i+1<<endl;
+        cout<<"Nombre: "; getline(cin, kittens[i].nom);
+        cout<<"Color: "; getline(cin, kittens[i].color);
+        cout<<"Edad: "; cin>>kittens[i].edad; cout<<endl;
+        cin.ignore();
+    }
 
+    auto Print= [](Cat kittens[5]){
+        for (int i=0; i<5; i++){
+            cout<<"Gato "<<i+1<<endl;
+            cout << "Nombre: " << kittens[i].nom << endl;
+            cout << "Color: " << kittens[i].color << endl;
+            cout << "Edad: " << kittens[i].edad << endl;
+        }
+    };
+
+    Print(kittens);
 
     return 0;
 }
