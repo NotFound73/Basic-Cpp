@@ -14,10 +14,12 @@ class Cat{
         nom="unknown";
         edad=-1;
     }
-    Cat(string x, string y, int z){
-        color=y;
-        nom=x;
-        edad=z;
+
+    void leer(){
+        cout << "Nombre: "; getline(cin, nom);
+        cout << "Color: "; getline(cin, color);
+        cout << "Edad: "; cin >> edad;
+        cin.ignore();
     }
 
     void mostrar(){
@@ -37,13 +39,7 @@ int main(){
     Cat kittens[N];
     for(int i=0; i<N; i++){
         cout << "Gato " << i+1 << endl;
-        string x, y;
-        int z;
-        cout << "Nombre: "; getline(cin, x);
-        cout << "Color: "; getline(cin, y);
-        cout << "Edad: "; cin >> z;
-        cin.ignore();
-        kittens[i] = Cat(x, y, z);
+        kittens[i].leer();
     }
     
     cout << "===============\nListado de Gatos\n===============" << endl;
