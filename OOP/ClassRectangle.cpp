@@ -12,7 +12,7 @@ class rectangle {
         height = 0;
     }
 
-    rectangle(int x, int y) {
+    rectangle(float x, float y) {
         if(x>0 && y>0){
             base = x;
             height = y;
