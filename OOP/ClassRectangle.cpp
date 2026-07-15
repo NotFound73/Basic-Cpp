@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+#define N 3
 
 class rectangle {
     private:
@@ -38,25 +39,71 @@ class rectangle {
     float get_area(){
         return base*height;
     }
+
+    bool isValid(){
+        return base > 0 && height > 0;
+    }
+
+    void show_rectangle(int i){
+        cout << "Rectangle Num. " << i+1 << endl;
+        cout << "Base: " << get_base() << endl;
+        cout << "Heigh: " << get_height() << endl;
+        cout << "Perimeter: " << get_perimeter() << endl;
+        cout << "Area: " << get_area() << endl;
+    }
 };
 
-int main (){
-    int x, y;
+rectangle Get_Rectangle(int i){
+    float x, y;
 
-    cout << "Defining the Rectangle" << endl;
+    cout << "Defining the Rectangle Num. " << i+1 << endl;
     cout << "Base: "; cin >> x;
     cout << "Height: "; cin >> y;
     rectangle obj(x, y);
     
-    if (obj.get_base()==0 || obj.get_height()==0){
-        system ("cls");
-        cout << "Data ERROR";
+    if (!obj.isValid()){
+        system("cls");
+        cout << "Data ERROR" << endl;
+        system("pause");
     }
-    else{
-        cout << "Rectangle Properties" << endl;
-        cout << "Base: " << obj.get_base() << endl;
-        cout << "Heigh: " << obj.get_height() << endl;
-        cout << "Perimeter: " << obj.get_perimeter() << endl;
-        cout << "Area: " << obj.get_area() << endl;
+    
+    return obj;
+}
+
+int Get_biggest_area(rectangle box[N]){
+    int mayor;
+
+    for (int i=0; i<N-1; i++){
+        if (box[i].get_area() > box[i+1].get_area()){
+            mayor = i;
+        }
     }
+    return mayor;
+}
+
+int main (){
+    rectangle box[N];
+    
+    for (int i=0; i<N; i++){
+        box[i]= Get_Rectangle(i);
+    }
+    system("pause");
+    system("cls");
+
+    for (int i=0; i<N; i++){
+       if (!box[i].isValid()){
+        cout << "Rectangle Num." << i+1 << " is invalid" << endl;
+       } 
+       else {
+        box[i].show_rectangle(i);
+       }
+    }
+
+    system("pause");
+    system("cls");
+
+    int Mayor = Get_biggest_area(box);
+    cout << "Mayor area (Rectangulo Num. " << Mayor+1 << "): " << box[Mayor].get_area() << endl;
+    
+    return 0;
 }
