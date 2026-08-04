@@ -27,5 +27,7 @@ int main(){
     rectangle obj(x, y);
     cout << "Perimeter: " << obj.perimeter << endl;
     cout << "Area: " << obj.area << endl;
+
+    system("pause");
     return 0;
 }

@@ -17,5 +17,7 @@ int main(){
     cout<<"Listado de solo un Alumno (de momento)";
     cout<<"\nNombre: "<<alumno1.name<<"\nEdad: "<<alumno1.age<<"\nCalificacion: "<<alumno1.grade;
 
+    system("pause");
+
     return 0;
 }

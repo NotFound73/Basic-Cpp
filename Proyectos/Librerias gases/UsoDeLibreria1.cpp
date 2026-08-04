@@ -5,7 +5,7 @@ using namespace std;
 int main (){
     float T=0, V=0, P=0, n=0;
 
-    cout << "================\nFormulario de Gases Ideales\n===============\n";
+    cout << "==========================\nFormulario de Gases Ideales\n==========================\n";
     cout << "\n Temperatura: "; cin >> T;
     cout << " Volumen: "; cin >> V;
     cout << " Presion: "; cin >> P;
@@ -28,8 +28,9 @@ int main (){
     cout << "\n Numero molar: " << n << " moles";
     cout << "\n Presion: " << P << " atm";
     cout << "\n Volumen: " << V << " metros cubicos";
-    cout << "\n Temperatura: " << T << " K";
-
+    cout << "\n Temperatura: " << T << " K" << endl;
+    
+    system("pause");
     return 0;
 }
 

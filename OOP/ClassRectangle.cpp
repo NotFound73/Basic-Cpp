@@ -104,6 +104,7 @@ int main (){
 
     int Mayor = Get_biggest_area(box);
     cout << "Mayor area (Rectangulo Num. " << Mayor+1 << "): " << box[Mayor].get_area() << endl;
+    system("pause");
     
     return 0;
 }

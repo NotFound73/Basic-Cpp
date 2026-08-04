@@ -32,6 +32,7 @@ int main(){
     };
 
     Print(kittens);
+    system("pause");
 
     return 0;
 }

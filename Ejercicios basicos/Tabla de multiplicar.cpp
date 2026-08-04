@@ -20,4 +20,5 @@ int main(){
     cout<<"Selecciona el número: ";
     cin>>x;
     Loop(x, 1);
+    system("pause");
 }

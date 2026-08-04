@@ -7,5 +7,6 @@ int main (){
 
     cout<<"¿Cuál es tú nombre?\n";
     getline(cin, Nom);
-    cout<<"\nHola "<<Nom<<"!";
+    cout<<"\nHola "<<Nom<<"!"<<endl;
+    system("pause");
 }

@@ -23,6 +23,7 @@ int main(){
 
     delete num;
     delete name;
+    system("pause");
 
     return 0;
 }

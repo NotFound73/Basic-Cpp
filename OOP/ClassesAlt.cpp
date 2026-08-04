@@ -47,6 +47,7 @@ int main(){
         cout << "Gato " << i+1 << endl;
         kittens[i].mostrar();
     }
+    system("pause");
     return 0;
 }
 

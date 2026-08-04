@@ -4,28 +4,12 @@
 using namespace std;
 #define R 0.082057
 
-float temp(float n, float V, float P){
-    float T=0;
-    T = (P * V)/(n * R);
-    return T;
-}
+float temp(float n, float V, float P);
 
-float vol(float n, float T, float P){
-    float V=0;
-    V = (n * R * T)/ P;
-    return V;
-}
+float vol(float n, float T, float P);
 
-float pres(float n, float V, float T){
-    float P=0;
-    P = (n * R * T)/ V;
-    return P;
-}
+float pres(float n, float V, float T);
 
-float nmol(float P, float V, float T){
-    float n=0;
-    n = (P * V) / (R * T);
-    return n;
-}
+float nmol(float P, float V, float T);
 
 #endif

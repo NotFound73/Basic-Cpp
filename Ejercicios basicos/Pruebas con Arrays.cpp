@@ -42,4 +42,6 @@ int main(){
         case 2: Str(); break;
         default: cout<<"Opcion Invalida";
     }
+    system("pause");
+    return 0;
 }
