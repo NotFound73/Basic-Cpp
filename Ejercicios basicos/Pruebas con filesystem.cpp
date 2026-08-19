@@ -10,6 +10,8 @@ int main() {
     int num_files= 0;
 
     for (const auto& archivo : descargas){
+        if (!archivo.is_regular_file())
+        continue;
         cout << archivo.path().filename() << endl;
         num_files ++;
     }
