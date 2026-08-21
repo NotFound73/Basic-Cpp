@@ -2,6 +2,7 @@
 #include <string>
 #include <conio.h>
 #include <cctype>
+#include <algorithm>
 #define N 6
 using namespace std;
 
@@ -29,42 +30,34 @@ string set_temp (string ans){
 }
 
 bool is_word_right(string ans, string temp){
-    if (ans == temp){
-        return true;
+    return (ans == temp);
+}
+
+int check_letter(string ans, string temp, int i, bool isused[]){
+    if (ans.at(i) == temp.at(i)){
+        isused[i] = true;
+        return 1;
     }
-    else {
-        return false;
+    else{
+        return 0;
     }
 }
 
-int check_letters(string ans, string temp, int i){
-        if (ans.at(i) == temp.at(i)){
-            return 1;
+void double_check(int pos[], string ans, string temp, bool isused[]){
+    for (int i=0; i<ans.size(); i++){
+        if (pos[i] == 1){
+            continue;
         }
-        else{
-            if (ans.find(temp.at(i)) == string :: npos){
-                return 0;
-            }
-            else {
-                int count1 = 0, count2 = 0;
-                for (char letra : ans){
-                    if (temp.at(i) == letra)
-                    count1 ++;
-                }
-                for (int j=0; j <= i; j++){
-                    if (temp.at(i) == temp.at(j)){
-                        count2 ++;
-                    }
-                }
-                if (count1 == count2){
-                    return 2;
-                }
-                else{
-                    return 0;
-                }
+
+        for(int j=0; j<ans.size(); j++){
+            if(!isused[j] && ans[j] == temp[i]){
+                pos[i] = 2;
+                isused[j] = true;
+                break;
             }
         }
     }
+}
 
 int main(){
     string ans;
@@ -77,6 +70,7 @@ int main(){
     for (char &c : ans){
         c = toupper(c);
     }
+    
     system ("cls");
 
     cout << "The word is: " << ans << endl;
@@ -84,7 +78,7 @@ int main(){
     system("cls");
 
     cout << "Start guessing (the word has " << ans.size() << " characters)" << endl;
-    cout << "You,ve got" << N << "attempts" << endl;
+    cout << "You,ve got " << N << " attempts" << endl;
 
     for (int x=0; x < N; x++){
         cout << "-->";
@@ -95,23 +89,27 @@ int main(){
             cout << "You've won, Congratulations!!!" << endl;
             break;
         }
+
         else {
             int pos[ans.size()];
+            bool isused[ans.size()] = {};
 
             cout << "p->";
             for (int p=0; p < ans.size(); p++){
-                pos[p] = check_letters(ans, temp, p);
+                pos[p] = check_letter(ans, temp, p, isused);
             }
+            double_check(pos, ans, temp, isused);
+
             for (int p=0; p < ans.size(); p++){
                 cout << pos[p];
             }
             cout << endl;
-
-        if (x == N-1){
-            cout << "You've lost, What a chud!!!" << endl;
-        }
+            
+            if (x == N-1){
+                cout << "You've lost, What a loser!!!" << endl;
+            }
+        }    
     }
-}
     system("pause");
     return 0;
 }
