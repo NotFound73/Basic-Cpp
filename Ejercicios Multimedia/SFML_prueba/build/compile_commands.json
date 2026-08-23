@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/Users/quiqu/OneDrive/Documentos/Archivos de C++/Ejercicios Multimedia/SFML_prueba/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\SFML_prueba.dir\\src\\main.cpp.obj -c \"C:\\Users\\quiqu\\OneDrive\\Documentos\\Archivos de C++\\Ejercicios Multimedia\\SFML_prueba\\src\\main.cpp\"",
+  "file": "C:/Users/quiqu/OneDrive/Documentos/Archivos de C++/Ejercicios Multimedia/SFML_prueba/src/main.cpp",
+  "output": "CMakeFiles/SFML_prueba.dir/src/main.cpp.obj"
+}
+]

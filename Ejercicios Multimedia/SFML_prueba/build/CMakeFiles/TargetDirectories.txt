@@ -1,0 +1,3 @@
+C:/Users/quiqu/OneDrive/Documentos/Archivos de C++/Ejercicios Multimedia/SFML_prueba/build/CMakeFiles/SFML_prueba.dir
+C:/Users/quiqu/OneDrive/Documentos/Archivos de C++/Ejercicios Multimedia/SFML_prueba/build/CMakeFiles/edit_cache.dir
+C:/Users/quiqu/OneDrive/Documentos/Archivos de C++/Ejercicios Multimedia/SFML_prueba/build/CMakeFiles/rebuild_cache.dir
