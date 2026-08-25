@@ -33,6 +33,10 @@ void Ordenado(){
             destino = "C:/Users/quiqu/Downloads/Videos";
         }
 
+        else if (ext == ".txt"){
+            destino = "C:/Users/quiqu/Downloads/Textos";
+        }
+
         else{
             destino = "C:/Users/quiqu/Downloads/Otros";
         }
